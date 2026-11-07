@@ -2,8 +2,8 @@
 
 **M.Tech (AIML) – Machine Learning (S1-26_AIMLZG565) – Assignment 2**
 
-- **GitHub repository:** `https://github.com/ervijayt/bits-sem-1-ml-assignment-2-student-academic-success-prediction`
-- **Live Streamlit app:** `<ADD YOUR STREAMLIT APP LINK HERE>`
+- **GitHub repository:** <https://github.com/ervijayt/bits-sem-1-ml-assignment-2-student-academic-success-prediction>
+- **Live Streamlit app:** <https://bits-sem-1-ml-assignment-2-student-academic-success-prediction.streamlit.app/>
 
 ---
 
@@ -48,12 +48,14 @@ The 885-row test split is saved as [`test_data.csv`](test_data.csv). It includes
 
 ## c. GitHub Repository Link
 
-`<ADD YOUR GITHUB REPO LINK HERE>`
+**Repository:** <https://github.com/ervijayt/bits-sem-1-ml-assignment-2-student-academic-success-prediction>
+
+**Live Streamlit app:** <https://bits-sem-1-ml-assignment-2-student-academic-success-prediction.streamlit.app/>
 
 Repository structure:
 
 ```
-ml-assignment-2/
+bits-sem-1-ml-assignment-2-student-academic-success-prediction/
 │-- app.py                 # Streamlit web application
 │-- train_models.py        # Trains, evaluates and saves all 5 models
 │-- requirements.txt
@@ -114,7 +116,8 @@ KNN 0.62 / 0.20 / 0.94; NB 0.67 / 0.18 / 0.83; SVM 0.73 / 0.35 / 0.93.
 ## How to Run
 
 ```bash
-cd ml-assignment-2            # scripts use paths relative to this folder
+git clone https://github.com/ervijayt/bits-sem-1-ml-assignment-2-student-academic-success-prediction.git
+cd bits-sem-1-ml-assignment-2-student-academic-success-prediction   # scripts use paths relative to this folder
 pip install -r requirements.txt
 python train_models.py        # retrains models, regenerates model/*.joblib, model/metrics.csv, test_data.csv
 python -m streamlit run app.py
@@ -127,9 +130,14 @@ python -m streamlit run app.py
 - **Confusion matrix and classification report** for the selected model, plus a table of actual vs predicted classes.
 
 ### Deployment (Streamlit Community Cloud)
-1. Push this folder to a GitHub repository.
-2. Go to <https://streamlit.io/cloud>, sign in with GitHub and click **New app**.
-3. Select the repository and branch, set **Main file path** to `app.py`, then click **Deploy**.
+The app is deployed at <https://bits-sem-1-ml-assignment-2-student-academic-success-prediction.streamlit.app/>.
+
+Deployment steps used:
+1. Pushed this repository to GitHub (public).
+2. Signed in to <https://share.streamlit.io> with GitHub and clicked **Create app**.
+3. Selected repository `ervijayt/bits-sem-1-ml-assignment-2-student-academic-success-prediction`, branch `main`,
+   main file path `app.py`, Python version 3.11 (Advanced settings), then clicked **Deploy**.
+4. Streamlit Cloud installs `requirements.txt` and redeploys automatically on every push to `main`.
 
 > The `.joblib` models are tied to the `scikit-learn` version used to train them (pinned in `requirements.txt`).
 > If you retrain with a different version (for example on BITS Virtual Lab), update the pin to match `python -c "import sklearn; print(sklearn.__version__)"`.
