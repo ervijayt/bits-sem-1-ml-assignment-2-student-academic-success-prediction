@@ -29,7 +29,7 @@ with open("test_data.csv", "rb") as f:
 uploaded_file = st.sidebar.file_uploader("Upload CSV file", type="csv")
 
 st.sidebar.header("2. Choose a model")
-model_name = st.sidebar.radio("Model", list(model_files.keys()))
+model_name = st.sidebar.selectbox("Model", list(model_files.keys()))
 
 # ---------- Comparison table from training ----------
 st.subheader("Comparison of all 5 models (from training)")

@@ -9,10 +9,10 @@
 
 ## a. Problem Statement
 
-Higher-education institutions lose many students to dropout or delayed graduation. The goal is to **predict each student's academic outcome**
-(**Dropout**, **Enrolled** or **Graduate**) at the end of the normal course duration, using information known at enrolment
-(demographics, socio-economic background and prior academic path) and performance in the first two semesters.
-Early identification of at-risk students lets the institution intervene with tutoring, counselling or financial support.
+Higher-education institutions lose many students to dropout or delayed graduation. The goal is to **predict each student's eventual academic outcome**
+(**Dropout**, **Enrolled** or **Graduate**) after first- and second-semester results are available, using demographic and socio-economic information,
+prior academic history, and performance in those first two semesters. This prediction point is after the second semester, not at enrolment;
+the prediction can help identify students who may benefit from further support before their final outcome is known.
 
 This is a **multi-class (3-class) classification** problem. Five classical ML classifiers are trained on the same data and compared on six
 evaluation metrics. The trained models are served through an interactive Streamlit web app.
@@ -125,7 +125,7 @@ python -m streamlit run app.py
 
 ### Streamlit App Features
 - **Dataset upload (CSV):** upload test data (`,` or `;` separated). If nothing is uploaded, the app uses `test_data.csv`, which can also be downloaded from the sidebar.
-- **Model selection (radio buttons):** choose any of the 5 trained models.
+- **Model selection (dropdown):** choose any of the 5 trained models.
 - **Evaluation metrics:** Accuracy, AUC, Precision, Recall, F1 and MCC for the uploaded data (when it has a `Target` column), plus a comparison table of all models.
 - **Confusion matrix and classification report** for the selected model, plus a table of actual vs predicted classes.
 
